@@ -1,0 +1,157 @@
+﻿<Window x:Class="WellPlateTempNET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WellPlateTempNET"
+        mc:Ignorable="d" Height="581" Width="924"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" Title="C3 - Microplate Temperature Mapping Tool" Icon="/icon.png">
+    <Window.Resources>
+        <System:Double x:Key="valueHandlerA_val1">0</System:Double>
+    </Window.Resources>
+    <Grid Margin="0,0,0,-16">
+        <Image HorizontalAlignment="Left" Height="403" Margin="282,96,0,0" VerticalAlignment="Top" Width="602" Source="/2560px-96-Well_plate.svg.png"/>
+        <RadioButton x:Name="rbtn_1" Content="1" HorizontalAlignment="Left" Margin="338,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Width="25" Checked="RadioButton_Checked_1" IsChecked="True"/>
+        <RadioButton x:Name="rbtn_2" Content="2" HorizontalAlignment="Left" Margin="381,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_3" Content="3" HorizontalAlignment="Left" Margin="422,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_4" Content="4" HorizontalAlignment="Left" Margin="468,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_5" Content="5" HorizontalAlignment="Left" Margin="507,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_6" Content="6" HorizontalAlignment="Left" Margin="550,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_7" Content="7" HorizontalAlignment="Left" Margin="593,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_8" Content="8" HorizontalAlignment="Left" Margin="635,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_9" Content="9" HorizontalAlignment="Left" Margin="676,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_10" Content="10" HorizontalAlignment="Left" Margin="716,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_11" Content="11" HorizontalAlignment="Left" Margin="758,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rbtn_12" Content="12" HorizontalAlignment="Left" Margin="801,76,0,0" VerticalAlignment="Top" GroupName="btnGrp" Checked="RadioButton_Checked" RenderTransformOrigin="0.477,0.45"/>
+        <Label Content="Average last" HorizontalAlignment="Left" Height="30" Margin="24,162,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="txt_seconds" HorizontalAlignment="Left" Margin="104,168,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top" Width="60" InputScope="Number"/>
+        <Label Content="seconds" HorizontalAlignment="Left" Height="30" Margin="169,162,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="recBtn" Content="Record" HorizontalAlignment="Left" Margin="24,108,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="16" Height="33" Width="60" Background="Red" Foreground="White">
+            <Button.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="pauseBtn" Content="Pause" HorizontalAlignment="Left" Margin="104,108,0,0" VerticalAlignment="Top" FontSize="16" Height="33" Width="60" IsEnabled="False" Click="pauseBtn_Click"/>
+        <Ellipse x:Name="A1_circ" HorizontalAlignment="Left" Height="40" Margin="330,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B1_circ" HorizontalAlignment="Left" Height="40" Margin="330,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C1_circ" HorizontalAlignment="Left" Height="40" Margin="330,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D1_circ" HorizontalAlignment="Left" Margin="330,256,0,0" Stroke="Black" Width="40" Height="40" VerticalAlignment="Top"/>
+        <Ellipse x:Name="F1_circ" HorizontalAlignment="Left" Height="40" Margin="330,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G1_circ" HorizontalAlignment="Left" Height="40" Margin="330,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="H1_circ" HorizontalAlignment="Left" Height="40" Margin="330,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="A2_circ" HorizontalAlignment="Left" Height="40" Margin="373,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B2_circ" HorizontalAlignment="Left" Height="40" Margin="373,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C2_circ" HorizontalAlignment="Left" Height="40" Margin="373,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D2_circ" HorizontalAlignment="Left" Height="40" Margin="373,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E2_circ" HorizontalAlignment="Left" Height="40" Margin="373,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F2_circ" HorizontalAlignment="Left" Height="40" Margin="373,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G2_circ" HorizontalAlignment="Left" Height="40" Margin="373,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H2_circ" HorizontalAlignment="Left" Height="40" Margin="373,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A3_circ" HorizontalAlignment="Left" Height="40" Margin="415,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B3_circ" HorizontalAlignment="Left" Height="40" Margin="415,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C3_circ" HorizontalAlignment="Left" Height="40" Margin="415,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D3_circ" HorizontalAlignment="Left" Height="40" Margin="415,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E3_circ" HorizontalAlignment="Left" Height="40" Margin="415,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F3_circ" HorizontalAlignment="Left" Height="40" Margin="415,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G3_circ" HorizontalAlignment="Left" Height="40" Margin="415,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H3_circ" HorizontalAlignment="Left" Height="40" Margin="415,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A4_circ" HorizontalAlignment="Left" Height="40" Margin="457,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B4_circ" HorizontalAlignment="Left" Height="40" Margin="457,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C4_circ" HorizontalAlignment="Left" Height="40" Margin="457,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D4_circ" HorizontalAlignment="Left" Height="40" Margin="457,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E4_circ" HorizontalAlignment="Left" Height="40" Margin="457,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F4_circ" HorizontalAlignment="Left" Height="40" Margin="457,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G4_circ" HorizontalAlignment="Left" Height="40" Margin="457,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="H4_circ" HorizontalAlignment="Left" Height="40" Margin="457,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="A5_circ" HorizontalAlignment="Left" Height="40" Margin="500,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B5_circ" HorizontalAlignment="Left" Height="40" Margin="500,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C5_circ" HorizontalAlignment="Left" Height="40" Margin="500,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D5_circ" HorizontalAlignment="Left" Height="40" Margin="500,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E5_circ" HorizontalAlignment="Left" Height="40" Margin="500,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F5_circ" HorizontalAlignment="Left" Height="40" Margin="500,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G5_circ" HorizontalAlignment="Left" Height="40" Margin="500,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H5_circ" HorizontalAlignment="Left" Height="40" Margin="500,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="A6_circ" HorizontalAlignment="Left" Height="40" Margin="542,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B6_circ" HorizontalAlignment="Left" Height="40" Margin="542,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C6_circ" HorizontalAlignment="Left" Height="40" Margin="542,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D6_circ" HorizontalAlignment="Left" Height="40" Margin="542,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E6_circ" HorizontalAlignment="Left" Height="40" Margin="542,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F6_circ" HorizontalAlignment="Left" Height="40" Margin="542,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G6_circ" HorizontalAlignment="Left" Height="40" Margin="542,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H6_circ" HorizontalAlignment="Left" Height="40" Margin="542,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A7_circ" HorizontalAlignment="Left" Height="40" Margin="584,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B7_circ" HorizontalAlignment="Left" Height="40" Margin="584,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C7_circ" HorizontalAlignment="Left" Height="40" Margin="584,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D7_circ" HorizontalAlignment="Left" Height="40" Margin="584,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E7_circ" HorizontalAlignment="Left" Height="40" Margin="584,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F7_circ" HorizontalAlignment="Left" Height="40" Margin="584,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G7_circ" HorizontalAlignment="Left" Height="40" Margin="584,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H7_circ" HorizontalAlignment="Left" Height="40" Margin="584,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A8_circ" HorizontalAlignment="Left" Height="40" Margin="626,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B8_circ" HorizontalAlignment="Left" Height="40" Margin="626,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C8_circ" HorizontalAlignment="Left" Height="40" Margin="626,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D8_circ" HorizontalAlignment="Left" Height="40" Margin="626,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E8_circ" HorizontalAlignment="Left" Height="40" Margin="626,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F8_circ" HorizontalAlignment="Left" Height="40" Margin="626,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G8_circ" HorizontalAlignment="Left" Height="40" Margin="626,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H8_circ" HorizontalAlignment="Left" Height="40" Margin="626,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A9_circ" HorizontalAlignment="Left" Height="40" Margin="669,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B9_circ" HorizontalAlignment="Left" Height="40" Margin="669,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C9_circ" HorizontalAlignment="Left" Height="40" Margin="669,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D9_circ" HorizontalAlignment="Left" Height="40" Margin="669,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E9_circ" HorizontalAlignment="Left" Height="40" Margin="669,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F9_circ" HorizontalAlignment="Left" Height="40" Margin="669,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="G9_circ" HorizontalAlignment="Left" Height="40" Margin="669,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H9_circ" HorizontalAlignment="Left" Height="40" Margin="669,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A10_circ" HorizontalAlignment="Left" Height="40" Margin="711,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B10_circ" HorizontalAlignment="Left" Height="40" Margin="711,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C10_circ" HorizontalAlignment="Left" Height="40" Margin="711,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D10_circ" HorizontalAlignment="Left" Height="40" Margin="711,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E10_circ" HorizontalAlignment="Left" Height="40" Margin="711,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="F10_circ" HorizontalAlignment="Left" Height="40" Margin="711,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G10_circ" HorizontalAlignment="Left" Height="40" Margin="711,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H10_circ" HorizontalAlignment="Left" Height="40" Margin="711,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="A11_circ" HorizontalAlignment="Left" Height="40" Margin="753,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B11_circ" HorizontalAlignment="Left" Height="40" Margin="753,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C11_circ" HorizontalAlignment="Left" Height="40" Margin="753,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D11_circ" HorizontalAlignment="Left" Height="40" Margin="753,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E11_circ" HorizontalAlignment="Left" Height="40" Margin="753,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F11_circ" HorizontalAlignment="Left" Height="40" Margin="753,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G11_circ" HorizontalAlignment="Left" Height="40" Margin="753,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="H11_circ" HorizontalAlignment="Left" Height="40" Margin="753,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="A12_circ" HorizontalAlignment="Left" Height="40" Margin="796,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="B12_circ" HorizontalAlignment="Left" Height="40" Margin="796,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="C12_circ" HorizontalAlignment="Left" Height="40" Margin="796,214,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="D12_circ" HorizontalAlignment="Left" Height="40" Margin="796,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="E12_circ" HorizontalAlignment="Left" Height="40" Margin="796,299,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="F12_circ" HorizontalAlignment="Left" Height="40" Margin="796,341,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Ellipse x:Name="G12_circ" HorizontalAlignment="Left" Height="40" Margin="796,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Ellipse x:Name="H12_circ" HorizontalAlignment="Left" Height="40" Margin="796,426,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" />
+        <Label Content="COM Port" HorizontalAlignment="Left" Height="30" Margin="24,208,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="combo_COMports" HorizontalAlignment="Left" Margin="104,212,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="combo_COMports_SelectionChanged"/>
+        <Ellipse x:Name="E1_circ" HorizontalAlignment="Left" Margin="330,299,0,0" Stroke="Black" Width="40" Height="40" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="24,20,0,0" VerticalAlignment="Top" Width="128" Source="/c3logo.png"/>
+        <Label Content="Current Temp. (°C):" HorizontalAlignment="Left" Margin="24,254,0,0" VerticalAlignment="Top" FontSize="16" Height="42" Width="200"/>
+        <Label Content="A" HorizontalAlignment="Left" Margin="31,294,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_a" Content="0" HorizontalAlignment="Left" Margin="54,294,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="B" HorizontalAlignment="Left" Margin="31,320,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_b" Content="0" HorizontalAlignment="Left" Margin="54,320,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="C" HorizontalAlignment="Left" Margin="31,343,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_c" Content="0" HorizontalAlignment="Left" Margin="54,343,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="D" HorizontalAlignment="Left" Margin="31,369,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_d" Content="0" HorizontalAlignment="Left" Margin="54,369,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="E" HorizontalAlignment="Left" Margin="31,395,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_e" Content="0" HorizontalAlignment="Left" Margin="54,395,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="F" HorizontalAlignment="Left" Margin="31,421,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_f" Content="0" HorizontalAlignment="Left" Margin="54,421,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="G" HorizontalAlignment="Left" Margin="31,447,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_g" Content="0" HorizontalAlignment="Left" Margin="54,447,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Label Content="H" HorizontalAlignment="Left" Margin="31,473,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_cur_h" Content="0" HorizontalAlignment="Left" Margin="54,473,0,0" VerticalAlignment="Top" Width="117" x:FieldModifier="public"/>
+        <Button x:Name="exportBtn" Content="Export" HorizontalAlignment="Left" Height="33" Margin="185,108,0,0" VerticalAlignment="Top" Width="64" Background="#FF00FA00" FontSize="16" Click="exportBtn_Click"/>
+        <Label Content="Version 1.0 - © C3 UTS 2022" Height="43" Margin="676,504,41,34" IsEnabled="False" Foreground="#FFADADAD" RenderTransformOrigin="0.5,0.5" FontFamily="Consolas" />
+    </Grid>
+</Window>
